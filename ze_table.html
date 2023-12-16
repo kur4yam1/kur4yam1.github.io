@@ -173,7 +173,7 @@ function makeBMSTable(info, mark, order) {
 	
     // 表のクリア
     obj.html("");
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>memo</td><td align='center'>コメント</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>使用しているマップ</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
@@ -266,10 +266,7 @@ function makeBMSTable(info, mark, order) {
         	} else {
 	        $("<td width='15%'></td>").appendTo(str);
         	}
-        }
-
-	// 譜面製作者
-	$("＜td width='10%'＞" + info[i].charter + "＜/div＞＜/td＞").appendTo(str);
+	}
 	    
         // コメント
         $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
