@@ -66,7 +66,7 @@
    ze1 = ☆1<br>
    zeXX = やばい<br>
    zeで使用されている曲を登録してます<br>
-      (厳密には違う曲でも入ってます)<br>
+   (使用されてるのがアレンジ版でも元曲を入れてます)<br>
    <br>
    <a href="index.html">Home</a><br>
   </div>
@@ -173,14 +173,14 @@ function makeBMSTable(info, mark, order) {
 	
     // 表のクリア
     obj.html("");
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>譜面</td><td colspan='2' align='center'>beatoraja IR</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>譜面製作者</td><td align='center'>コメント</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
         if (x != info[i].level) {
             // 前の区切りに譜面数、平均密度を追加
           	if (obj_sep != null) {
-                obj_sep.html("<td colspan='9' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+                obj_sep.html("<td colspan='7' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
             }
             obj_sep = $("<tr class='tr_separate' id='" + mark + info[i].level + "'></tr>");
             obj_sep.appendTo(obj);
@@ -225,14 +225,6 @@ function makeBMSTable(info, mark, order) {
 		} else {
         	$("<td width='1%'></td>").appendTo(str);
 		}
-　　　　// 譜面画像
-　　　　$("<td width='1%' align='center'><a href='http://www.ribbit.xyz/bms/score/view?p=1&md5=" + info[i].md5 + "' target='_blank'>♪</a></td>").appendTo(str);
-
-　　　　// Mocha Repository
-　　　　$("<td width='1%' align='center'><a href='https://mocha-repository.info/song.php?sha256=" + info[i].sha256 + "' target='_blank'><img src='/style/mochair_logo.gif' border='0' alt='Mocha Repository' /></a></td>").appendTo(str);
-
-　　　　// MinIR
-　　　　$("<td width='1%' align='center'><a href='https://www.gaftalk.com/minir/#/viewer/song/" + info[i].sha256 + "/0' target='_blank'><img src='/style/minir_logo.gif' border='0' alt='MinIR' /></a></td>").appendTo(str); <!-- /0 を /1 /2 に変更すると CN,HCN のIRページにリンクされます -->
 
         // タイトル
         $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
@@ -275,6 +267,10 @@ function makeBMSTable(info, mark, order) {
 	        $("<td width='15%'></td>").appendTo(str);
         	}
         }
+
+	// memo
+	$("＜td width='10%'＞" + info[i].charter + "＜/div＞＜/td＞").appendTo(str);
+	    
         // コメント
         $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
         str.appendTo(obj);
@@ -285,7 +281,7 @@ function makeBMSTable(info, mark, order) {
     // 最後の区切り処理
 	// マークが抜け落ちてたので追加
     if (obj_sep != null) {
-        obj_sep.html("<td colspan='9' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+        obj_sep.html("<td colspan='7' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
     }
 }
 </script>
