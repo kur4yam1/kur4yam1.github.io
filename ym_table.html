@@ -224,18 +224,6 @@ function makeBMSTable(info, mark, order) {
         if(info[i].state == 3) {
         str = $("<tr class='state3'></tr>");
         }
-        if(info[i].state == 4) {
-        str = $("<tr class='state4'></tr>");
-        }
-        if(info[i].state == 5) {
-        str = $("<tr class='state5'></tr>");
-        }
-        if(info[i].state == 6) {
-        str = $("<tr class='state6'></tr>");
-	}
-        if(info[i].state == 9) {
-        str = $("<tr class='state9'></tr>");
-        }
 
         // レベル表記
         $("<td width='6%'>" + mark + x + "</td>").appendTo(str);
