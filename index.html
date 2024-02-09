@@ -32,59 +32,6 @@
  a:active { /*クリック中*/
   color: #FF5C5C;
 }
-
- .news-list{
-  list-style: none outside;
-  margin: 0;
-  padding: 0;
-}
-.news-list .item a{
-  display: flex;
-  flex-wrap: wrap;
-  flex-wrap: nowrap;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #CCC;
-  padding: 20px 20px;
-}
-.news-list .item:first-child a{
-  border-top: 1px solid #CCC;
-}
-.news-list .item .date{
-  margin: 0;
-  min-width: 120px;
-  font-size: 16px;
-  color: #999;
-  padding: 0 20px 0 0;
-}
-.news-list .item .title{
-  margin: 0;
-  width: 100%;
-}
-.news-list .item a:hover .title{
-  color: #00F;
-}
-
-@media screen and (max-width: 767px){
-.news-list .item a{
-  flex-wrap: wrap;
-}
-.news-list .item .date{
-  min-width: 100px;
-}
-.news-list .item .title{
-  margin-top: 10px;
-}
-}
-
-/* 装飾 */
- 
-*{
-  box-sizing: border-box;
-}
-a{
-  text-decoration: none;
-}
  
  body {
   background-color: #404040;
@@ -113,24 +60,15 @@ a{
   <div class="font2">
    -Home-<br>
    <br>
-   <a href="madeze.html">zeマップ [作成中]</a><br>
+   <a href="madeze.html">zeマップ</a> [作成中]<br>
    ────────────────<br>
    <a href="madebms.html">作った曲/BMS</a> [作成中]<br>
    <a href="ym_table.html">yamither難易度表 (自作差分置き場)</a><br>
-   <a href="ze_table.html">ze難易度表 [作成中]</a><br>
+   <a href="ze_table.html">ze難易度表</a> [作成中]<br>
    <a href="ze_musiclist.html">(BMSにある)ze曲リスト</a><br>
    <a href="bms_sabun_comment.html">自作差分のコメントとか</a><br>
    ────────────────<br>
    <a href="info.html">info</a><br>
-
-   <ul class="news-list">
-    <li class="item">
-        <a href="#">
-            <p class="date">2024-02-09</p>
-            <p class="title">test</p>
-        </a>
-    </li>
-</ul>
   </div>
  </center>
 </body>
