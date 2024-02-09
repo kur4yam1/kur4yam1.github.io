@@ -38,6 +38,27 @@
 	display: inline-block;
 }
  
+ .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+ .tooltip .tooltiptext {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+ .tooltip:hover .tooltiptext {
+    display: block;
+}
+	
  body {
   background-color: #404040;
   color: white;
@@ -80,10 +101,17 @@
    └ <a href="info.html">info</a><br>
   </p>
    <br>
-   【更新ログ】
+   【更新ログ】<br>
+   <span style="font-size: 10pt;">赤色の場所はカーソルを重ねると詳細が確認できます</span><br>
    <p class="text">
-   <div style="width: 600px; height: 170px; overflow: auto; background-color: #666666; border: 1px dotted; font-size: 14px; color: #ffffff; text-align: left; margin: 6px; padding: 6px; overflow-y: scroll;">
-	[2024-02-09] 一部ページのレイアウトを作り直し、ze曲リストに2曲追加<br>
+   <div style="width: 600px; height: 170px; overflow: auto; background-color: #666666; border: 1px ridge; font-size: 14px; color: #ffffff; text-align: left; margin: -24px; padding: 6px; overflow-y: scroll;">
+	[2024-02-09] 一部ページのレイアウトを作り直し、ze曲リストに
+	<div class="tooltip">
+    <font color="#fabbaf"; >2曲</font>
+    <span class="tooltiptext">
+    Break&nbsp;Through&nbsp;The&nbsp;Barrier Burn
+    </span>
+  </div>追加<br>
 	
 	</p>
    </div>
