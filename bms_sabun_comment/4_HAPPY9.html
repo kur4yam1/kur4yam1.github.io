@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-<title>4.HAPPY9 - Knightmare Dreams</title>
+<title>6.FaFS - Knightmare Dreams</title>
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
@@ -11,15 +11,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300&family=M+PLUS+1:wght@400&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
-<meta name="msapplication-config" content="favicon/browserconfig.xml" />
+<meta name="msapplication-config" content="../favicon/browserconfig.xml" />
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+<meta name="msapplication-TileImage" content="../favicon/mstile-144x144.png">
 <meta name="theme-color" content="#666666">
-<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
-<link rel="mask-icon" href="favicon/safari-icon.svg" color="#000" />
-<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-<link rel="manifest" href="favicon/manifest.json">
+<link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-180x180.png">
+<link rel="mask-icon" href="../favicon/safari-icon.svg" color="#000" />
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-chrome-192x192.png">
+<link rel="manifest" href="../favicon/manifest.json">
 
 <style>
  a {
@@ -41,6 +41,32 @@
 
  a:active { 
   color: #ff5c5c;
+}
+
+ details {
+	height: 32px;
+	width: 600px;
+	border: 1px ridge;
+	transition: .5s;
+}
+ details[open] {
+	height: 32px;
+	background-color: #666666;
+	margin-bottom: 9em;
+}
+
+details[open] summary ~ * {
+    animation: fade .5s ease-out;
+}
+
+@keyframes fade {
+    0%    {opacity: 0}
+    100%  {opacity: 1}
+}
+
+ summary {
+	cursor: pointer;
+	list-style: none;
 }
 
  body {
@@ -83,19 +109,24 @@
    <font color="#fafaaf">☆<a href="http://rattoto10.blog.fc2.com/blog-entry-12.html">SUPERVARIATION</a>参加譜面</font><br>
    <strike>癖譜面</strike> クソ譜面<br>
    <br>
-   まず初めに　<b>本当にすみませんでした</b><br>
+   まず初めに…本当にすみませんでした<br>
    何でこのイベントで出したのか本当に謎です(一応癖譜面っぽさは出してみましたが…)<br>
    終盤は超連打ばかりなのでうまい人ならL-Assistくらいは付くんじゃないですかね(雑)<br>
-   提出してから差分名[ネタ切れ]とかにでもすれば良かったかなと軽く後悔してます<br>
+   提出してから差分名[ネタ切れ]とかにでもすれば良かったかなと軽く後悔してます<strike>(だから何だよ)</strike><br>
    とにかくこんな譜面にok出してくれたratさんありがとうございました<br>
    <br>
-   一応解説(?)<br>
-   0:30 即死地雷かと思いきや実はZY地雷 ZZと何も違わないだろ<br>
+   <details>
+	<summary>解説(?)</summary>
+	<br>
+	 <div>
+   0:30 ZY地雷(?)<br>
    1:20 どうやって押すねん<br>
    1:26 どうやって押すねん2<br>
    1:47 575は同梱HYPER,ANOTHERやカスと同じ配置<br>
    <br>
    0:36だったり1:07~だったりはbga再現してたり<br>
+	 </div>
+   </details>
    <br>
    < Made: 2024-01-08 ><br>
    <br>

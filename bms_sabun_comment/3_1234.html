@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-<title>3.1,2,3,4! - Knightmare Dreams</title>
+<title>6.FaFS - Knightmare Dreams</title>
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
@@ -11,15 +11,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300&family=M+PLUS+1:wght@400&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
-<meta name="msapplication-config" content="favicon/browserconfig.xml" />
+<meta name="msapplication-config" content="../favicon/browserconfig.xml" />
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+<meta name="msapplication-TileImage" content="../favicon/mstile-144x144.png">
 <meta name="theme-color" content="#666666">
-<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
-<link rel="mask-icon" href="favicon/safari-icon.svg" color="#000" />
-<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-<link rel="manifest" href="favicon/manifest.json">
+<link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-180x180.png">
+<link rel="mask-icon" href="../favicon/safari-icon.svg" color="#000" />
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-chrome-192x192.png">
+<link rel="manifest" href="../favicon/manifest.json">
 
 <style>
  a {
@@ -41,6 +41,32 @@
 
  a:active { 
   color: #ff5c5c;
+}
+
+ details {
+	height: 32px;
+	width: 600px;
+	border: 1px ridge;
+	transition: .5s;
+}
+ details[open] {
+	height: 32px;
+	background-color: #666666;
+	margin-bottom: 13em;
+}
+
+details[open] summary ~ * {
+    animation: fade .5s ease-out;
+}
+
+@keyframes fade {
+    0%    {opacity: 0}
+    100%  {opacity: 1}
+}
+
+ summary {
+	cursor: pointer;
+	list-style: none;
 }
 
  body {
@@ -83,21 +109,25 @@
    <font color="#fafaaf">☆<a href="http://rattoto10.blog.fc2.com/blog-entry-12.html">SUPERVARIATION</a>参加譜面</font><br>
    ガチギミックを組んだのはこれが初<br>
    <br>
-   [攻略]<br>
-   とりあえず<a href="https://youtu.be/0j4Uns6BUEM">youtubeで見る</a>なり同梱譜面やるなりして曲を聞いて覚えましょう<br>
-   一応気を付ける点としては「1234」じゃなくて「1357」です<br>
-   地雷は一応ヒントですが後半になると嘘予告になるので流れを覚えてしまいましょう<br>
-   (正直言っちゃうと譜面覚えるより曲覚えたほうがすぐできます)<br>
-   <br>
-   譜面自体は簡単なので落ち着いて叩きましょう<br>
-   (最後は全押し対策してあるのでご了承を)<br>
-   <br>
-   [譜面の話]<br>
    何も考えずに小節線を使った結果数本足りずに妥協<br>
    最後だけで600本くらい使ってます(ワープする度使うからすぐ溶ける)<br>
    まあでも思い通りの譜面はできたのでよかったかな<br>
    <br>
-   < Made: 2024-01-07 ><br>
+   <details>
+	<summary>攻略</summary>
+	<br>
+	 <div>
+   とりあえず<a href="https://youtu.be/0j4Uns6BUEM">youtubeで見る</a>なり同梱譜面やるなりして曲を聞いて覚えましょう<br>
+   一応気を付ける点としては「1234」じゃなくて「1357」です<br>
+   地雷は一応ヒントですが後半になると嘘予告になるので流れを覚えてしまいましょう<br>
+   (真面目に譜面より曲覚えたほうが簡単)<br>
+   <br>
+   譜面自体は簡単なので落ち着いてしばきましょう<br>
+   (最後は全押し対策してます)<br>
+	 </div>
+   </details>
+   <br>
+   < Made: 2024-01-08 ><br>
    <br>
    <a href="../bms_sabun_comment.html">Back</a><br>
    <a href="../index.html">Home</a><br>
