@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+<title>6.FaFS - Knightmare Dreams</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@300&family=M+PLUS+1:wght@400&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+<meta name="msapplication-config" content="../favicon/browserconfig.xml" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../favicon/mstile-144x144.png">
+<meta name="theme-color" content="#666666">
+<link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-180x180.png">
+<link rel="mask-icon" href="../favicon/safari-icon.svg" color="#000" />
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-chrome-192x192.png">
+<link rel="manifest" href="../favicon/manifest.json">
+
+<style>
+ a {
+  text-decoration: none;
+}
+
+ a:link { 
+  color: #8ae4ff;
+}
+
+ a:visited { 
+  color: #dbb2ff;
+}
+
+ a:hover { 
+  color: #ffb2b2;
+  text-decoration: underline;
+}
+
+ a:active { 
+  color: #ff5c5c;
+}
+
+ details {
+	height: 32px;
+	width: 600px;
+	border: 1px ridge;
+	transition: .5s;
+}
+ details[open] {
+	height: 32px;
+	background-color: #666666;
+	margin-bottom: 4em;
+}
+ details[open]:nth-of-type(2) {
+	margin-bottom: 19em;
+}
+
+details[open] summary ~ * {
+    animation: fade .5s ease-out;
+}
+
+@keyframes fade {
+    0%    {opacity: 0}
+    100%  {opacity: 1}
+}
+
+ summary {
+	cursor: pointer;
+	list-style: none;
+}
+
+ body {
+  background-color: #404040;
+  color: white;
+  font-size: 18px;
+  margin: 50px;
+
+  color: white;
+  font-family: 'M PLUS 1', sans-serif;
+}
+
+ .font1 {
+  color: white;
+  font-family: 'M PLUS 2', sans-serif;
+}
+
+ .font2 {
+  color: white;
+  font-family: 'Zen Maru Gothic', serif;
+}
+</style>
+</head>
+
+
+<body>
+ <center>
+  <div class="font1">
+   <h1>Find a Fake Sign [Fake LongNotes]<br>Find a Fake Sign [Spot the Difference]</h1>
+  </div>
+
+  <div class="font2">
+  
+   <!-- Beginner:#bbfaaf | Normal:#add8e6 | Hyper:#fafaaf | Another:#fabbaf | Insane:#c9aee8 -->
+   
+   <font color="#add8e6">[Fake LongNotes] ★★★★★★★★★★★★ [ln10？]</font><br>
+   <font color="#add8e6">[Spot the Difference] ☆☆☆☆☆☆☆☆☆☆☆☆ [fr0] (☆3~4相当)</font><br>
+   <br>
+   <iframe width="480" height="270" src="https://www.youtube.com/embed/pMsciH-hDbA" frameborder="1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="480" height="270" src="https://www.youtube.com/embed/pHKqaXvoea0" frameborder="1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+   <br>
+   [Fake LongNotes]<br>
+   oraja専用ギミック(SCROLL)を使用<br>
+   見た目は全部LNだけど実際の長さはほとんど普通のノーツと変わりません(一部見た目通りのも混ざってる)<br>
+   使ってるのはSCROLLだけなのでLR2でも動きます<br>
+   <a href="https://youtu.be/cVrgCqbFtLA">(作ったはいいけど結局上げなかった比較動画)</a><br>
+   <br>
+   [Spot the Difference]<br>
+   元々FakeLNだけの予定だったけど作ってるうちにやりたくなった結果できました<br>
+   初めて#RANDOMを使ったので知らないところでミスってるかも<br>
+   <br>
+   <details>
+	<summary>攻略のヒント</summary>
+	<br>
+	 <div>
+	 分岐は大量にあるけど変わる点はそこまで多くないです<br>
+	 分岐パターンは [レーン数×3+1(7,8問目は+15)]<br>
+	 </div>
+   </details>
+	<br>
+   <details>
+	<summary>攻略</summary>
+	<br>
+	 <div>
+	 攻略というか変化する要素ですが<br>
+	 1問目：10パターン　・どこかが消える<br>
+	 2問目：10パターン　・どこかが増える<br>
+	 3,4問目：13パターン　・どこかが消える/増える/ずれる<br>
+	 5問目：16パターン　・一瞬ノーツが増える<br>
+	 6問目：16パターン　・一瞬ノーツが増える/消える<br>
+	 7問目：34パターン　・どこかが消える/増える/ずれて増える　<br>・2個変化することがある<br>
+	 8問目：34パターン　・どこかが増える/ずれる/ずれて増える　<br>・2個変化することがある<br>
+	 9問目：22パターン　・どこかが消える(HS低いと見つけづらい)<br>
+	 <br>
+	 全問共通で1パターン変化なしがあります<br>
+	 </div>
+   </details>
+   <br>
+   <a href="../bms_sabun_comment.html">Back</a><br>
+   <a href="../index.html">Home</a><br>
+   <br>
+  </div>
