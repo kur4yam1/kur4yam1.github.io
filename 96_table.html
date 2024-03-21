@@ -212,7 +212,7 @@ function makeBMSTable(info, mark, order) {
 	
     // 表のクリア
     obj.html("");
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>タイトル</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
@@ -241,66 +241,9 @@ function makeBMSTable(info, mark, order) {
 
         // レベル表記
         $("<td width='6%'>" + mark + x + "</td>").appendTo(str);
-        // 動画
-		if(info[i].video1 != "" && info[i].video1 != null){
-			// ニコニコ
-			$("<td width='1%' align='center'><a href='http://www.nicovideo.jp/watch/sm" + info[i].video1 + "' target='_blank'><img src='style/nico.gif' border='0' alt='ニコニコ動画' /></a></td>").appendTo(str);
-		} else if(info[i].video2 != "" && info[i].video2 != null){
-			// YouTube
-			$("<td width='1%' align='center'><a href='http://www.youtube.com/watch?v=" + info[i].video2 + "' target='_blank'><img src='style/youtube.gif' border='0' alt='Youtube' /></a></td>").appendTo(str);
-		} else if(info[i].video3 != "" && info[i].video3 != null){
-			// vimeo
-			$("<td width='1%' align='center'><a href='http://vimeo.com/" + info[i].video3 + "' target='_blank'><img src='style/vimeo.gif' border='0' alt='vimeo' /></a></td>").appendTo(str);
-		} else {
-        	$("<td width='1%'></td>").appendTo(str);
-		}
-
+        
         // タイトル
         $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
-        // アーティスト
-        var astr = "";
-        if(info[i].url != "" && info[i].url != null) {
-        	if(info[i].artist != "" && info[i].artist != null) {
-        		astr = "<a href='" + info[i].url + "'>" + info[i].artist + "</a>";
-        	} else {
-        		astr = "<a href='" + info[i].url + "'>" + info[i].url + "</a>";
-        	}
-        } else {
-        	if(info[i].artist != "" && info[i].artist != null) {
-        		astr = info[i].artist;
-        	}
-        }
-        if(info[i].url_pack != "" && info[i].url_pack != null) {
-        	if(info[i].name_pack != "" && info[i].name_pack != null) {
-        		astr += "<br />(<a href='" + info[i].url_pack + "'>" + info[i].name_pack + "</a>)";
-        	} else {
-        		astr += "<br />(<a href='" + info[i].url_pack + "'>" + info[i].url_pack + "</a>)";
-        	}
-        } else {
-        	if(info[i].name_pack != "" && info[i].name_pack != null) {
-        		astr += "<br />(" + info[i].name_pack + ")";
-        	}
-        }
-        $("<td width='20%'>" + astr + "</td>").appendTo(str);
-        // 差分
-        if(info[i].url_diff != "" && info[i].url_diff != null) {
-        	if(info[i].name_diff != "" && info[i].name_diff != null) {
-	        $("<td width='15%'><a href='" + info[i].url_diff + "'>" + info[i].name_diff + "</a></td>").appendTo(str);
-        	} else {
-	        $("<td width='15%'><a href='" + info[i].url_diff + "'>" + info[i].url_diff + "</a></td>").appendTo(str);
-        	}
-        } else {
-        	if(info[i].name_diff != "" && info[i].name_diff != null) {
-	        $("<td width='15%'>" + info[i].name_diff + "</td>").appendTo(str);
-        	} else {
-	        $("<td width='15%'></td>").appendTo(str);
-        	}
-	}
-	    
-        // コメント
-        $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
-        str.appendTo(obj);
-        count++;
     }
 
     
