@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
-<meta name="bmstable" content="./header_ze.json" /> <!--　読み込む難易度表のヘッダファイルをここに指定　-->
+<meta name="bmstable" content="./header_pr.json" /> <!--　読み込む難易度表のヘッダファイルをここに指定　-->
 <link href="style/style.css" rel="stylesheet" type="text/css" media="screen,print" />
 <script src="style/jquery-2.0.2.min.js"></script>
 
@@ -62,7 +62,22 @@
  #c2 a:active { /*クリック中*/
   color: #FF5C5C;
 }
+	
+ .blank1 {
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
 
+ .blank2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ .font2 .text {
+	text-align: left;
+	display: inline-block;
+}
+	
  body {
   background-color: #404040;
   font-size: 18px;
@@ -87,23 +102,25 @@
 
 <body>
 
- <center>
+  <center>
   <div class="font1">
-   <h1>ze難易度表</h1><br>
+   <h1>Practice_Charts</h1><br>
   </div>
 
   <div class="font2">
   <div id="c2">
-   ze1 = ☆1<br>
-   <span style="font-size: 12pt;">ze13 = ★1, ze33 = ★★1</span></br>
-   <span style="font-size: 12pt;">ze?? = やばい | zeLxx = LN譜面 | zeGxx = ギミック譜面</span><br>
-   (詳しくはこちらから→ <a href="http://flowermaster.web.fc2.com/lrnanido/bmsln.html">LN難易度表</a> | <a href="https://nasashiki.web.fc2.com/gimmick.html">ギミック譜面案内所</a> )<br>
-   zeマップで使用されている曲を登録してます<br>
-   (使用されてるのがアレンジ版でも元曲を入れてます)<br>
-   曲リストはこちらから→ <a href="ze_musiclist.html">ze曲リスト</a><br>
-   <span style="font-size: 10pt;">(プレイしてもらうのが目的なので譜面傾向とかは入れてません)</span></br>
-   ※現在作成中のためwebページでの閲覧しかできません<br>
-   <a href="index.html">Home</a><br>
+   <div class="font2">
+  <div id="c2">
+   Lv.1 = ☆1<br>
+   <span style="font-size: 11pt;">Lv.13 = ★1, Lv.33 = ★★1</span></br>
+   <p class="blank1">Lv.99 = 個人差爆発, Lv.?? = 判定不可,やばい<br>
+</p>
+   自分用の練習譜面を置いてます<br>
+   個人的に改変しているものなので<b>IR登録禁止</b>です<br>
+   ※リンクは本体/元差分ページへ飛びます<br>
+   <span style="font-size: 10pt;">※連絡くれれば譜面はお渡ししますが自分用なので期待はするな</span><br>
+   <p class="blank2"><a href="index.html">Home</a><br>
+</p>
   </div>
  </center>
 
@@ -208,14 +225,14 @@ function makeBMSTable(info, mark, order) {
 	
     // 表のクリア
     obj.html("");
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>Mocha</td><td align='center'>タイトル/LR2IR</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
         if (x != info[i].level) {
             // 前の区切りに譜面数、平均密度を追加
           	if (obj_sep != null) {
-                obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+                obj_sep.html("<td colspan='7' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
             }
             obj_sep = $("<tr class='tr_separate' id='" + mark + info[i].level + "'></tr>");
             obj_sep.appendTo(obj);
@@ -233,7 +250,7 @@ function makeBMSTable(info, mark, order) {
         }
         if(info[i].state == 3) {
         str = $("<tr class='state3'></tr>");
-	}
+        }
 
         // レベル表記
         $("<td width='6%'>" + mark + x + "</td>").appendTo(str);
@@ -250,7 +267,10 @@ function makeBMSTable(info, mark, order) {
 		} else {
         	$("<td width='1%'></td>").appendTo(str);
 		}
-
+	    
+	// Mocha
+	$("<td width='1%' align='center'><a href='https://mocha-repository.info/song.php?sha256=" + info[i].sha256 + "' target='_blank'><img src='style/mochair_logo.gif' border='0' alt='Mocha' /></a></td>").appendTo(str);
+	    
         // タイトル
         $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
         // アーティスト
@@ -294,7 +314,7 @@ function makeBMSTable(info, mark, order) {
 	}
 	    
         // コメント
-        $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
+        $("<td width='35%'>" + info[i].comment + "</div></td>").appendTo(str);
         str.appendTo(obj);
         count++;
     }
@@ -303,7 +323,7 @@ function makeBMSTable(info, mark, order) {
     // 最後の区切り処理
 	// マークが抜け落ちてたので追加
     if (obj_sep != null) {
-        obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+        obj_sep.html("<td colspan='7' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
     }
 }
 </script>
