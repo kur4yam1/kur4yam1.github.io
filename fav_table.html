@@ -2,11 +2,11 @@
 <html lang="ja">
 
 <head>
-<title>Practice_Charts - Knightmare Dreams</title>
+<title>Favorite_Musics - Knightmare Dreams</title>
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
-<meta name="bmstable" content="./header_pr.json" /> <!--　読み込む難易度表のヘッダファイルをここに指定　-->
+<meta name="bmstable" content="./header_fav.json" /> <!--　読み込む難易度表のヘッダファイルをここに指定　-->
 <link href="style/style.css" rel="stylesheet" type="text/css" media="screen,print" />
 <script src="style/jquery-2.0.2.min.js"></script>
 
@@ -104,20 +104,14 @@
 
   <center>
   <div class="font1">
-   <h1>Practice_Charts</h1><br>
+   <h1>Favorite_Musics</h1><br>
   </div>
 
   <div class="font2">
   <div id="c2">
-   <div class="font2">
-  <div id="c2">
-   Lv.1 = ☆1<br>
-   <span style="font-size: 11pt;">Lv.13 = ★1, Lv.33 = ★★1</span></br>
-   <p class="blank1">Lv.99 = 個人差爆発, Lv.?? = 判定不可,やばい<br>
-</p>
-   自分用の練習譜面を置いてます<br>
-   個人的に改変しているものなので<b>IR登録禁止</b>です<br>
-   ※本体リンクは本体/元差分ページへ飛びます<br>
+   自分用の好きな曲置き場 ※難易度分けは無し<br>
+   自分の出来るレベルの譜面だけなので主に☆12~★6辺りが入ってます<br>
+   Practiceフォルダ内の譜面は<b>IR登録禁止</b>です<br>
    <span style="font-size: 10pt;">※連絡くれれば譜面はお渡ししますが自分用なので期待はするな</span><br>
    <p class="blank2"><a href="index.html">Home</a><br>
 </p>
@@ -225,14 +219,14 @@ function makeBMSTable(info, mark, order) {
 	
     // 表のクリア
     obj.html("");
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>動画</td><td align='center'>Mocha</td><td align='center'>タイトル/LR2IR</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>タイトル/LR2IR</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
         if (x != info[i].level) {
             // 前の区切りに譜面数、平均密度を追加
           	if (obj_sep != null) {
-                obj_sep.html("<td colspan='7' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+                obj_sep.html("<td colspan='4' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
             }
             obj_sep = $("<tr class='tr_separate' id='" + mark + info[i].level + "'></tr>");
             obj_sep.appendTo(obj);
@@ -251,25 +245,6 @@ function makeBMSTable(info, mark, order) {
         if(info[i].state == 3) {
         str = $("<tr class='state3'></tr>");
         }
-
-        // レベル表記
-        $("<td width='6%'>" + mark + x + "</td>").appendTo(str);
-        // 動画
-		if(info[i].video1 != "" && info[i].video1 != null){
-			// ニコニコ
-			$("<td width='1%' align='center'><a href='http://www.nicovideo.jp/watch/sm" + info[i].video1 + "' target='_blank'><img src='style/nico.gif' border='0' alt='ニコニコ動画' /></a></td>").appendTo(str);
-		} else if(info[i].video2 != "" && info[i].video2 != null){
-			// YouTube
-			$("<td width='1%' align='center'><a href='http://www.youtube.com/watch?v=" + info[i].video2 + "' target='_blank'><img src='style/youtube.gif' border='0' alt='Youtube' /></a></td>").appendTo(str);
-		} else if(info[i].video3 != "" && info[i].video3 != null){
-			// vimeo
-			$("<td width='1%' align='center'><a href='http://vimeo.com/" + info[i].video3 + "' target='_blank'><img src='style/vimeo.gif' border='0' alt='vimeo' /></a></td>").appendTo(str);
-		} else {
-        	$("<td width='1%'></td>").appendTo(str);
-		}
-	    
-	// Mocha
-	$("<td width='1%' align='center'><a href='https://mocha-repository.info/song.php?sha256=" + info[i].sha256 + "' target='_blank'><img src='style/mochair_logo.gif' border='0' alt='Mocha' /></a></td>").appendTo(str);
 	    
         // タイトル
         $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
@@ -323,7 +298,7 @@ function makeBMSTable(info, mark, order) {
     // 最後の区切り処理
 	// マークが抜け落ちてたので追加
     if (obj_sep != null) {
-        obj_sep.html("<td colspan='7' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+        obj_sep.html("<td colspan='4' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
     }
 }
 </script>
