@@ -372,7 +372,7 @@ function makeBMSTable(info, mark, order) {
 	$("<td width='1%' align='center'><a href='https://mocha-repository.info/song.php?sha256=" + info[i].sha256 + "' target='_blank'><img src='style/mochair_logo.gif' border='0' alt='Mocha' /></a></td>").appendTo(str);
 	    
         // タイトル
-        $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
+        $("<td width='20%'>" + "<a href='https://bms-ir.org/new/song?songmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
         // アーティスト
         var astr = "";
         if(info[i].url != "" && info[i].url != null) {
